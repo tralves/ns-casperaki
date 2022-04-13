@@ -2,7 +2,7 @@ import { Observable } from '@nativescript/core';
  
 
 declare let Test: any
-declare let JuceTestStaticLib: any
+declare let SoundSystemLibIOS: any
 
 export class SoundSystemCommon extends Observable {
 
@@ -13,7 +13,7 @@ export class SoundSystemCommon extends Observable {
     console.log(a.val);
     console.log(a.doubleNumber(5));
 
-    const b:any = new JuceTestStaticLib();
+    const b:any = new SoundSystemLibIOS();
     console.log(b.val);
     console.log(b.doubleNumber(7));
     b.initPlayer();

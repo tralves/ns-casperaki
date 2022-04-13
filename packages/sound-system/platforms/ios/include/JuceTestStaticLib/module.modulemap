@@ -1,1 +1,0 @@
-module JuceTestStaticLib { explicit module JuceTestStaticLib { header "JuceTestStaticLib.h" } }
