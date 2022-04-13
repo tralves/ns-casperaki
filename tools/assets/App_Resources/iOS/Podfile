@@ -7,3 +7,5 @@ post_install do |installer|
     end
   end
 end
+
+# pod 'Superpowered', :path => '../../../../packages/sound-system/platforms/ios/src/Superpowered/libSuperpowered.podspec'

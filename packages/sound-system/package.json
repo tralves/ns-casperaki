@@ -1,0 +1,35 @@
+{
+  "name": "@ns-casperaki/sound-system",
+  "version": "1.0.0",
+  "description": "Add a plugin description",
+  "main": "index",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "6.0.0",
+      "android": "6.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tralves/ns-casperaki.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "TypeScript",
+    "iOS",
+    "Android"
+  ],
+  "author": {
+    "name": "Tiago Alves",
+    "email": "tralves@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/tralves/ns-casperaki/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/tralves/ns-casperaki",
+  "readmeFilename": "README.md",
+  "bootstrapper": "@nativescript/plugin-seed"
+}

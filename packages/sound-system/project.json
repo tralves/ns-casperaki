@@ -1,0 +1,72 @@
+{
+  "root": "packages/sound-system",
+  "projectType": "library",
+  "sourceRoot": "packages/sound-system",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/sound-system",
+        "tsConfig": "packages/sound-system/tsconfig.json",
+        "packageJson": "packages/sound-system/package.json",
+        "main": "packages/sound-system/index.d.ts",
+        "assets": [
+          "packages/sound-system/*.md",
+          "packages/sound-system/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/sound-system/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "node tools/scripts/build-finish.ts sound-system"
+        ],
+        "parallel": false
+      },
+      "outputs": [
+        "dist/packages/sound-system"
+      ],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx g @nativescript/plugin-tools:focus-packages sound-system"
+        ],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/sound-system/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -57,13 +57,20 @@ module.exports = {
       },
     },
     '⚙️': {
-      script: `npx cowsay "@nativescript/* packages will keep your ⚙️ cranking"`,
-      description: '_____________  @nativescript/*  _____________',
+      script: `npx cowsay "@ns-casperaki/* packages will keep your ⚙️ cranking"`,
+      description: '_____________  @ns-casperaki/*  _____________',
     },
     // packages
     // build output is always in dist/packages
-    '@nativescript': {
-      'build-all': {
+    '@ns-casperaki': {
+      // @ns-casperaki/sound-system
+			'sound-system': {
+				build: {
+					script: 'nx run sound-system:build.all',
+					description: '@ns-casperaki/sound-system: Build',
+				},
+			},
+			'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
       },
@@ -73,8 +80,12 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
-      reset: {
-        script: 'nx g @nativescript/plugin-tools:focus-packages',
+      'sound-system': {
+				script: 'nx run sound-system:focus',
+				description: 'Focus on @ns-casperaki/sound-system',
+			},
+			reset: {
+        script: 'nx g @ns-casperaki/plugin-tools:focus-packages',
         description: 'Reset Focus',
       },
     },

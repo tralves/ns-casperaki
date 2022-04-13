@@ -1,0 +1,22 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tralves/ns-casperaki.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "TypeScript",
+    "iOS",
+    "Android"
+  ],
+  "author": {
+    "name": "Tiago Alves",
+    "email": "tralves@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/tralves/ns-casperaki/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/tralves/ns-casperaki"
+}

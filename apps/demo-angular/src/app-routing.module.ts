@@ -6,7 +6,8 @@ import { HomeComponent } from './home.component';
 
 const routes: Routes = [
    { path: '', redirectTo: '/home', pathMatch: 'full' },
-   { path: 'home', component: HomeComponent }
+   { path: 'home', component: HomeComponent },
+	{ path: 'sound-system', loadChildren: () => import('./plugin-demos/sound-system.module').then(m => m.SoundSystemModule) }
 ];
 
 @NgModule({

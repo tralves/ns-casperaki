@@ -1,0 +1,3 @@
+
+
+OTHER_LDFLAGS = $(inherited) -framework Accelerate -framework AudioToolbox -framework AVFoundation -framework CoreAudio -framework CoreMIDI
