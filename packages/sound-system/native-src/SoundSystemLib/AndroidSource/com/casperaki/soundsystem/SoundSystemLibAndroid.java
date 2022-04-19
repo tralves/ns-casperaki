@@ -1,5 +1,9 @@
 package com.casperaki.soundsystem;
 
 public class SoundSystemLibAndroid {
-  private int val = 5;
+  public int val = 5;
+
+  public int doubleNumber(int number) {
+    return number * 2;
+  }
 }
