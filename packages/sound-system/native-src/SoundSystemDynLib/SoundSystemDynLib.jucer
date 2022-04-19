@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="EUnTLc" name="SoundSystemDynLib" projectType="dll" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+  <MAINGROUP id="MBKsBn" name="SoundSystemDynLib">
+    <GROUP id="{5B934901-C23C-5996-E6E7-AB321624F105}" name="Source">
+      <FILE id="DQCSw9" name="CasPlayer.cpp" compile="1" resource="0" file="../SoundSystemLib/Source/CasPlayer.cpp"/>
+      <FILE id="yE9HkF" name="CasPlayer.h" compile="0" resource="0" file="../SoundSystemLib/Source/CasPlayer.h"/>
+      <FILE id="AYGq4K" name="main.cpp" compile="1" resource="0" file="../SoundSystemLib/Source/main.cpp"/>
+      <FILE id="RaUW38" name="main.h" compile="0" resource="0" file="../SoundSystemLib/Source/main.h"/>
+      <FILE id="fkpVLm" name="SoundSystem.cpp" compile="1" resource="0" file="../SoundSystemLib/Source/SoundSystem.cpp"/>
+      <FILE id="IFzGez" name="SoundSystem.h" compile="0" resource="0" file="../SoundSystemLib/Source/SoundSystem.h"/>
+      <FILE id="anZqjM" name="utils.h" compile="0" resource="0" file="../SoundSystemLib/Source/utils.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <ANDROIDSTUDIO targetFolder="Builds/Android" androidAdditionalJavaFolders="AndroidSource"
+                   androidCustomApplicationClass="com.casperaki.soundsystem.app"
+                   androidTargetSDK="31" androidBluetoothNeeded="0">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="SoundSystemDynLib"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="SoundSystemDynLib"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../../JUCE/modules"/>
+      </MODULEPATHS>
+    </ANDROIDSTUDIO>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+</JUCERPROJECT>

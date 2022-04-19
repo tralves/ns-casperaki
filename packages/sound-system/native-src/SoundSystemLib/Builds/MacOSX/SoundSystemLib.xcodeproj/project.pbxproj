@@ -346,7 +346,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.SoundSystemLib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.casperaki.SoundSystemLib;
 				PRODUCT_NAME = "SoundSystemLib";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
@@ -403,7 +403,7 @@
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.SoundSystemLib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.casperaki.SoundSystemLib;
 				PRODUCT_NAME = "SoundSystemLib";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
