@@ -15,10 +15,11 @@
 CasPlayer::CasPlayer()
     : state (Stopped)
     {
-        
+        Logger::writeToLog("CasPlayer constructor!");
+        std::cout << "CasPlayer constructor! " << std::endl;
         formatManager.registerBasicFormats();       // [1]
         transportSource.addChangeListener (this);   // [2]
-        
+
         String res = deviceManager.initialiseWithDefaultDevices(0,2); // num in/out channels
         std::cout << "initialiseWithDefaultDevices res: " << res << std::endl;
         audioSourcePlayer.setSource(this);
@@ -47,7 +48,7 @@ void CasPlayer::getNextAudioBlock (const juce::AudioSourceChannelInfo& bufferToF
         bufferToFill.clearActiveBufferRegion();
         return;
     }
-    
+
     transportSource.getNextAudioBlock (bufferToFill);
 }
 
@@ -72,7 +73,7 @@ void CasPlayer::changeState (TransportState newState)
     if (state != newState)
     {
         state = newState;
-        
+
         switch (state)
         {
             case Stopped:                           // [3]
@@ -80,16 +81,16 @@ void CasPlayer::changeState (TransportState newState)
 //                playButton.setEnabled (true);
                 transportSource.setPosition (0.0);
                 break;
-                
+
             case Starting:                          // [4]
 //                playButton.setEnabled (false);
                 transportSource.start();
                 break;
-                
+
             case Playing:                           // [5]
 //                stopButton.setEnabled (true);
                 break;
-                
+
             case Stopping:                          // [6]
                 transportSource.stop();
                 break;
@@ -100,9 +101,9 @@ void CasPlayer::changeState (TransportState newState)
 void CasPlayer::initSample() {
 
 //    auto* audioReader = (formatManager.createReaderFor (createAssetInputStream ("cello.wav").release(), true));
-    
+
     auto assetInputStream = createAssetInputStream ("hiHat_sample.wav");
-    
+
     auto* reader { formatManager.createReaderFor (std::move(assetInputStream)) };
 
     if (reader != nullptr)
@@ -111,6 +112,8 @@ void CasPlayer::initSample() {
         transportSource.setSource (newSource.get(), 0, nullptr, reader->sampleRate);       // [12]
 //        playButton.setEnabled (true);                                                      // [13]
         readerSource.reset (newSource.release());                                          // [14]
+    } else {
+        Logger::writeToLog("NO READER!!!!!!!!!!!!!");
     }
 }
 

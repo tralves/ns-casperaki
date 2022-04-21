@@ -1,23 +1,31 @@
 import { Observable } from '@nativescript/core';
- 
 
-declare let Test: any
-declare let SoundSystemLibIOS: any
+export abstract class SoundSystemCommon extends Observable {
 
-export class SoundSystemCommon extends Observable {
+  abstract initialize(): void;
+
+  abstract play(): void;
+
 
   val = 1;
 
   testFunc() {
-    const a:any = new Test();
-    console.log(a.val);
-    console.log(a.doubleNumber(5));
+    console.log("SoundSystemLib test! " + this.val);
+    this.initialize();
 
-    const b:any = new SoundSystemLibIOS();
-    console.log(b.val);
-    console.log(b.doubleNumber(7));
-    b.initPlayer();
-    setTimeout(() => b.play(), 5000);
-    return 1;
+    setTimeout(() => this.play(), 5000);
   }
+
+  // testFunc() {
+  //   const a:any = new Test();
+  //   console.log(a.val);
+  //   console.log(a.doubleNumber(5));
+
+  //   const b:any = new SoundSystemLibIOS();
+  //   console.log(b.val);
+  //   console.log(b.doubleNumber(7));
+  //   b.initPlayer();
+  //   setTimeout(() => b.play(), 5000);
+  //   return 1;
+  // }
 }

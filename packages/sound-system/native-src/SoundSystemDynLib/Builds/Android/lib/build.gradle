@@ -79,10 +79,21 @@ android {
         }
     }
 
+    libraryVariants.all {
+      variant ->
+        variant.outputs.each {
+          output ->
+              output.outputFileName = "SoundSystemLib-${variant.flavorName}.aar"
+        }
+    }
+
+//    tasks.getByName("assembleRelease").finalizedBy(copyAars)
+
     sourceSets {
         main.java.srcDirs +=
             ["./src",
-             "../../../../../../../../../JUCE/modules/juce_core/native/javacore/init"]
+//             "../../../../../../../../../JUCE/modules/juce_core/native/javacore/init"
+            ]
 
         main.res.srcDirs +=
             []
@@ -99,18 +110,17 @@ android {
 }
 
 task copyAars(type: Copy) {
-  from("$buildDir/outputs/aar") {
-//      exclude '**/*unsigned.apk', '**/*unaligned.apk'
-  }
-  into '../../../../../platforms/android'
+//  println "COPY!!!"
+  dependsOn "assembleDebug"
+  from "$buildDir/outputs/aar"
+  into "$rootDir/../../../../platforms/android"
 }
 
-tasks.whenTaskAdded {
-  theTask ->
-    if (theTask.name.contains('externalNativeBuild')) {
-      theTask.doLast{
-        copyAars
-      }
-    }
-    println theTask.name
-}
+//tasks.whenTaskAdded {
+//  theTask ->
+////    println theTask.name
+//    if (theTask.name == 'assembleRelease') {
+//      theTask.finalizedBy(copyAars)
+//    }
+////    println theTask.name
+//}

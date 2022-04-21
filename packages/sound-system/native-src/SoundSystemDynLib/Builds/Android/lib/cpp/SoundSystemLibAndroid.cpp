@@ -5,9 +5,9 @@
 #include "SoundSystemLibAndroid.h"
 #include <jni.h>
 
-//#include "../../SoundSystemLib/Source/CasPlayer.h"
+#include "../../SoundSystemLib/Source/CasPlayer.h"
 
-//CasPlayer casPlayer;
+CasPlayer* casPlayer = nullptr;
 
 extern "C"
 JNIEXPORT jint JNICALL
@@ -19,11 +19,21 @@ Java_com_casperaki_soundsystem_SoundSystemLibAndroid_doubleNumberJNI(JNIEnv *env
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_casperaki_soundsystem_SoundSystemLibAndroid_initPlayer(JNIEnv *env, jobject thiz) {
-//    casPlayer.initSample();
+    MessageManager::getInstance()->runDispatchLoop();
+    std::cout << "Java_com_casperaki_soundsystem_SoundSystemLibAndroid_initPlayer! " << std::endl;
+    casPlayer = new CasPlayer;
+    casPlayer->initSample();
 }
 
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_casperaki_soundsystem_SoundSystemLibAndroid_play(JNIEnv *env, jobject thiz) {
-//    casPlayer.play();
+    casPlayer->play();
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_casperaki_soundsystem_SoundSystemLibAndroid_initialiseJUCE(JNIEnv *env, jclass clazz,
+                                                                    jobject app_context) {
+    Thread::initialiseJUCE (env, app_context);
 }
